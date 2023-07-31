@@ -105,7 +105,6 @@ public class Frame extends JFrame{
             public void mouseWheelMoved(MouseWheelEvent e) {
                 if(pulsado != 0){
                     if(pulsado == 1){//rojo
-                        
                         contadorR += e.getPreciseWheelRotation();
                         
                         if(contadorR < 0){
@@ -114,11 +113,7 @@ public class Frame extends JFrame{
                         if(contadorR > 255){
                             contadorR = 255;
                         }
-                        
-                        panel.setBackground(new Color(contadorR, contadorV,contadorA));
-                        
                     } else if(pulsado == 2){//verde
-                        
                         contadorV += e.getPreciseWheelRotation();
                         
                         if(contadorV < 0){
@@ -127,11 +122,7 @@ public class Frame extends JFrame{
                         if(contadorV > 255){
                             contadorV = 255;
                         }
-                        
-                        panel.setBackground(new Color(contadorR, contadorV,contadorA));
-                        
                     } else{//azul
-                        
                         contadorA += e.getPreciseWheelRotation();
                         
                         if(contadorA < 0){
@@ -140,10 +131,9 @@ public class Frame extends JFrame{
                         if(contadorA > 255){
                             contadorA = 255;
                         }
-                        
-                        panel.setBackground(new Color(contadorR, contadorV,contadorA));
-                        
                     }
+                    
+                    panel.setBackground(new Color(contadorR, contadorV,contadorA));
                 }
                 etiqueta.setText("Color (Rojo: "+contadorR+", Verde: "+contadorV+", Azul: "+contadorA+")");
                 etiqueta.setBounds(etiqueta.getX(), etiqueta.getY(), 400,etiqueta.getHeight());
